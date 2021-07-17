@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FreeModeActivity">
+
+    <TextView
+        android:id="@+id/txt_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Left"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_left_angle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="0"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/txt_left"
+        app:layout_constraintTop_toTopOf="@id/txt_left" />
+
+    <com.goodiebag.protractorview.ProtractorView
+        android:id="@+id/left_protractor"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        app:angleTextSize="10sp"
+        app:arcColor="#4a4a4a"
+        app:arcProgressColor="#FF0000"
+        app:arcWidth="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_left"
+        app:progressWidth="4dp"
+        app:roundEdges="true"
+        app:textColor="#000"
+        app:textProgressColor="#FF0000"
+        app:tickColor="#4a4a4a"
+        app:tickIntervals="15"
+        app:tickLength="10dp"
+        app:tickOffset="18dp"
+        app:tickProgressColor="#abe6"
+        app:ticksBetweenLabel="two"
+        app:touchInside="true" />
+
+    <TextView
+        android:id="@+id/txt_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Right"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/left_protractor" />
+
+    <TextView
+        android:id="@+id/txt_right_angle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="0"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/txt_left"
+        app:layout_constraintTop_toTopOf="@id/txt_right" />
+
+    <com.goodiebag.protractorview.ProtractorView
+        android:id="@+id/right_protractor"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_marginBottom="32dp"
+        app:angleTextSize="10sp"
+        app:arcColor="#4a4a4a"
+        app:arcProgressColor="#FF0000"
+        app:arcWidth="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_right"
+        app:progressWidth="4dp"
+        app:roundEdges="true"
+        app:textColor="#000"
+        app:textProgressColor="#FF0000"
+        app:tickColor="#4a4a4a"
+        app:tickIntervals="15"
+        app:tickLength="10dp"
+        app:tickOffset="18dp"
+        app:tickProgressColor="#abe6"
+        app:ticksBetweenLabel="two"
+        app:touchInside="true" />
+
+    <TextView
+        android:id="@+id/txt_base"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Base"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/right_protractor" />
+
+    <TextView
+        android:id="@+id/txt_base_angle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="0"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/txt_left"
+        app:layout_constraintTop_toTopOf="@id/txt_base" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/base_slider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:valueFrom="0"
+        android:valueTo="180"
+        android:stepSize="1"
+        app:layout_constraintEnd_toEndOf="@id/right_protractor"
+        app:layout_constraintStart_toStartOf="@id/right_protractor"
+        app:layout_constraintTop_toBottomOf="@id/txt_base" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_grab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Grab"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/left_btn_update"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="128dp"
+        android:text="update"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_left" />
+
+    <Button
+        android:id="@+id/right_btn_update"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="336dp"
+        android:text="update"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_left" />
+
+    <Button
+        android:id="@+id/base_btn_update"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="update"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/base_slider" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
